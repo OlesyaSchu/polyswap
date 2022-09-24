@@ -25,7 +25,7 @@ const exchanges = [quick, uni3]
  * @description Отдает объект с парами-ключами и биржами, на которых есть эти пары
  * @returns {object} 
  */
-function getTrades(exchanges: any) {
+export function getTrades(exchanges: any) {
   const trades: any = {}
   exchanges.forEach((exchange: any) => {
     exchange.pairs.forEach((pair: any) => {

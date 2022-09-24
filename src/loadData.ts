@@ -14,7 +14,7 @@ const provider = new ethers.providers.InfuraWebSocketProvider(
  * @param {array} pairs - Пары, для которых будут запрашиваться данные
  * @param {string} path - Путь до файла, в который будут записаны результаты запроса
  */
-async function loadPairs(pairs: any, path: string, ) {
+export async function loadPairs(pairs: any, path: string, ) {
   let result: any = []  
   for (let i = 0; i < Math.ceil(pairs.length / 50); i++) {
     const res = await Promise.all(pairs.splice(i*50, 50).map(async (pair: any) => {
