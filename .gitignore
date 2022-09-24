@@ -129,3 +129,6 @@ docker-compose.yaml
 
 #esLint
 .eslintrc.json
+
+#data
+src/data
