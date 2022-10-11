@@ -46,7 +46,7 @@ export function getTrades(exchanges: Exchange[]) {
   return trades
 }
 
-const trades = getTrades(exchanges)
+// const trades = getTrades(exchanges)
 
 // берем пары с бирж
 // составляю трейды

@@ -19,11 +19,11 @@ export async function loadPairs(pairs: any, path: string, ) {
   for (let i = 0; i < Math.ceil(pairs.length / 50); i++) {
     const res = await Promise.all(pairs.splice(i*50, 50).map(async (pair: any) => {
       const pairContract = new ethers.Contract(pair.id, pairsAbi, provider)
-      let token0 = await pairContract.token0()
-      let token1 = await pairContract.token1()
+      const token0 = await pairContract.token0()
+      const token1 = await pairContract.token1()
       return {address: pair.id, tokens: [token0, token1]}
     }))
-    await new Promise((resolve) => setTimeout(resolve, 20000))
+    new Promise((resolve) => setTimeout(resolve, 20000))
     result.push(...res)
   }
   fs.writeFileSync(path, JSON.stringify(result, null, 2) , 'utf-8');
