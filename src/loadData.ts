@@ -23,9 +23,9 @@ export async function loadPairs(pairs: any, path: string, ) {
       const token1 = await pairContract.token1()
       return {address: pair.id, tokens: [token0, token1]}
     }))
-    new Promise((resolve) => setTimeout(resolve, 20000))
     result.push(...res)
   }
+  await new Promise((resolve) => setTimeout(resolve, 20000))
   fs.writeFileSync(path, JSON.stringify(result, null, 2) , 'utf-8');
 }
 
